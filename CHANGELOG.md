@@ -34,7 +34,6 @@ Inspired from [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - Added response schema for `GET /_plugins/_knn/warmup/{index}` ([#717](https://github.com/opensearch-project/opensearch-api-specification/pull/717))
 - Added support for multiple test verbs ([#724](https://github.com/opensearch-project/opensearch-api-specification/pull/724))
 - Added support for using a certificate and key in tests ([#731](https://github.com/opensearch-project/opensearch-api-specification/pull/731))
-- Added `GET /_plugins/_ml/models/{model_id}`, `POST /_plugins/_ml/models/_search`, `PUT /_plugins/_ml/models/{model_id}`, `POST /_plugins/_ml/models/{model_id}/_unload`, `POST /_plugins/_ml/models/_unload`, and `POST /_plugins/_ml/models/_undeploy` ([#733](https://github.com/opensearch-project/opensearch-api-specification/pull/733))
 
 ### Removed
 - Removed unsupported `_common.mapping:SourceField`'s `mode` field and associated `_common.mapping:SourceFieldMode` enum ([#652](https://github.com/opensearch-project/opensearch-api-specification/pull/652))
@@ -71,6 +70,8 @@ Inspired from [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - Fixed response schema for `/_render/template` and `/_render/template/{id}` ([#724](https://github.com/opensearch-project/opensearch-api-specification/pull/724))
 - Fixed data stream schema numeric property types ([#725](https://github.com/opensearch-project/opensearch-api-specification/pull/725))
 - Fixed snapshot status numeric property types ([#729](https://github.com/opensearch-project/opensearch-api-specification/pull/729))
+- Fixed request schema for `PATCH /_plugins/_security/api/nodesdn` ([#731](https://github.com/opensearch-project/opensearch-api-specification/pull/731))
+- Fixed response schema for `GET /_plugins/_security/api/nodesdn/{cluster_name}` ([#731](https://github.com/opensearch-project/opensearch-api-specification/pull/731))
 
 ### Changed
 - Changed `tasks._common:TaskInfo` and `tasks._common:TaskGroup` to be composed of a `tasks._common:TaskInfoBase` ([#683](https://github.com/opensearch-project/opensearch-api-specification/pull/683))
