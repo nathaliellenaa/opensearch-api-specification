@@ -90,6 +90,8 @@ paths:
       description: Undeploys a model.
       parameters:
         - $ref: '#/components/parameters/ml.undeploy_model::path.model_id'
+      requestBody:
+        $ref: '#/components/requestBodies/ml.undeploy_model'
       responses:
         '200':
           $ref: '#/components/responses/ml.undeploy_model@200'
@@ -110,8 +112,11 @@ paths:
       deprecated: true
       x-version-deprecated: 2.7.0
       x-deprecation-message: Use `undeploy_model` instead.
+      description: Unloads a model.
       parameters:
         - $ref: '#/components/parameters/ml.unload_model::path.model_id'
+      requestBody:
+        $ref: '#/components/requestBodies/ml.unload_model'
       responses:
         '200':
           $ref: '#/components/responses/ml.unload_model@200'
@@ -122,6 +127,7 @@ paths:
       deprecated: true
       x-version-deprecated: 2.7.0
       x-deprecation-message: Use `undeploy_model` instead.
+      description: Unloads a model.
       requestBody:
         $ref: '#/components/requestBodies/ml.unload_model'
       responses:
@@ -313,11 +319,11 @@ components:
               node_ids:
                 type: array
                 items:
-                  $ref: '_common.yaml#/components/schemas/Id'
+                  $ref: '../schemas/_common.yaml#/components/schemas/Id'
               model_ids:
                 type: array
                 items:
-                  $ref: '_common.yaml#/components/schemas/Id'
+                  $ref: '../schemas/_common.yaml#/components/schemas/Id'
             required:
               - model_ids
     ml.unload_model:
@@ -329,11 +335,11 @@ components:
               node_ids:
                 type: array
                 items:
-                  $ref: '_common.yaml#/components/schemas/Id'
+                  $ref: '../schemas/_common.yaml#/components/schemas/Id'
               model_ids:
                 type: array
                 items:
-                  $ref: '_common.yaml#/components/schemas/Id'
+                  $ref: '../schemas/_common.yaml#/components/schemas/Id'
             required:
               - model_ids
     ml.create_connector:
