@@ -35,6 +35,10 @@ Inspired from [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - Added support for multiple test verbs ([#724](https://github.com/opensearch-project/opensearch-api-specification/pull/724))
 - Added support for using a certificate and key in tests ([#731](https://github.com/opensearch-project/opensearch-api-specification/pull/731))
 - Added `GET /_plugins/_ml/models/{model_id}`, `POST /_plugins/_ml/models/_search`, `PUT /_plugins/_ml/models/{model_id}`, `POST /_plugins/_ml/models/{model_id}/_unload`, `POST /_plugins/_ml/models/_unload`, `POST /_plugins/_ml/models/_undeploy`, `POST /_plugins/_ml/models/_upload`,`POST /_plugins/_ml/models/{model_id}/_load`, `POST /_plugins/_ml/models/meta`, and `POST /_plugins/_ml/models/{model_id}/_predict` ([#733](https://github.com/opensearch-project/opensearch-api-specification/pull/733))
+- Added `_type` to `termvector` and `mtermvector` ([#734](https://github.com/opensearch-project/opensearch-api-specification/pull/734))
+- Added missing `cancelled` and `resource_stats` to `/_reindex/{task_id}/_rethrottle` ([#740](https://github.com/opensearch-project/opensearch-api-specification/pull/740))
+- Added missing `cancellation_time_millis` to `POST /_tasks/_cancel` ([#747](https://github.com/opensearch-project/opensearch-api-specification/pull/747))
+- Added support for combining output variables ([#737](https://github.com/opensearch-project/opensearch-api-specification/pull/737))
 
 ### Removed
 - Removed unsupported `_common.mapping:SourceField`'s `mode` field and associated `_common.mapping:SourceFieldMode` enum ([#652](https://github.com/opensearch-project/opensearch-api-specification/pull/652))
@@ -46,6 +50,7 @@ Inspired from [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - Removed unsupported `cause` and `create` from `/_index_template/_simulate_index/{name}` ([#691](https://github.com/opensearch-project/opensearch-api-specification/pull/691))
 - Removed `mappings` from `required` in `indices.simulate_template#Template` ([#691](https://github.com/opensearch-project/opensearch-api-specification/pull/691))
 - Removed `HealthStatusCapatilized` and merged it with `HealthStatus` ([#725](https://github.com/opensearch-project/opensearch-api-specification/pull/725))
+- Removed `id` from `required` in `indices.termvectors@200` ([#734](https://github.com/opensearch-project/opensearch-api-specification/pull/734))
 
 ### Fixed
 - Spec passes OpenAPI 3.1.0 validations ([#646](https://github.com/opensearch-project/opensearch-api-specification/pull/646))
@@ -74,6 +79,7 @@ Inspired from [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - Fixed request schema for `PATCH /_plugins/_security/api/nodesdn` ([#731](https://github.com/opensearch-project/opensearch-api-specification/pull/731))
 - Fixed response schema for `GET /_plugins/_security/api/nodesdn/{cluster_name}` ([#731](https://github.com/opensearch-project/opensearch-api-specification/pull/731))
 - Fixed request body for `/_search/scroll/{scroll_id}` ([#732](https://github.com/opensearch-project/opensearch-api-specification/pull/732))
+- Fixed type in `_msearch/template` ([#735](https://github.com/opensearch-project/opensearch-api-specification/pull/735))
 
 ### Changed
 - Changed `tasks._common:TaskInfo` and `tasks._common:TaskGroup` to be composed of a `tasks._common:TaskInfoBase` ([#683](https://github.com/opensearch-project/opensearch-api-specification/pull/683))

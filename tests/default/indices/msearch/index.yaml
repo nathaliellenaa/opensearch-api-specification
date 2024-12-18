@@ -1,4 +1,4 @@
-$schema: ../../../json_schemas/test_story.schema.yaml
+$schema: ../../../../json_schemas/test_story.schema.yaml
 
 description: Test endpoints relevant to the lifecycle of an index, including multi-get and multi-search operations.
 prologues:
@@ -10,7 +10,7 @@ prologues:
       content_type: application/x-ndjson
       payload:
         - {create: {_index: books, _id: book1}}
-        - {author: Harper Lee, title: To Kill a Mockingbird, year: 60}
+        - {author: Harper Lee, title: To Kill a Mockingbird, year: 1960}
         - {create: {_index: books, _id: book2}}
         - {director: Bennett Miller, title: The Cruise, year: 1998}
         - {create: {_index: books, _id: book3}}
@@ -22,7 +22,9 @@ epilogues:
 chapters:
   - synopsis: Perform a `_msearch` request to execute multiple search queries in a single call.
     path: /{index}/_msearch
-    method: POST
+    method:
+      - GET
+      - POST
     parameters:
       index: books
     request:
@@ -32,5 +34,3 @@ chapters:
         - {query: {match: {title: To Kill a Mockingbird}}}
         - {index: books}
         - {query: {match: {title: The Cruise}}}
-    response:
-      status: 200
