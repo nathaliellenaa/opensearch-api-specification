@@ -1072,7 +1072,7 @@ components:
           type: string
           description: The role of the message.
         content:
-          type: array
+          type: [string, array]
           items:
             $ref: '#/components/schemas/Content'
     Content:
@@ -1739,3 +1739,21 @@ components:
         - long-term
         - sessions
         - working
+    PredictModelStreamParam:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Message'
+        inputs:
+          type: string
+        _llm_interface:
+          type: string
+      additionalProperties: true
+    ExecuteAgentStreamParam:
+      type: object
+      properties:
+        question:
+          type: string
+      additionalProperties: true
